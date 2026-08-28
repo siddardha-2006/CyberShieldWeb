@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #051F20;
+    color: #DAF1DE;
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+  }
+}
+
+/* Background gradient matching download (4).jpg atmosphere */
+.pine-gradient-bg {
+  background: radial-gradient(circle at 50% 15%, rgba(142, 182, 155, 0.18) 0%, rgba(22, 56, 50, 0.65) 40%, #051F20 90%),
+              linear-gradient(180deg, #0B2B26 0%, #051F20 100%);
+  background-attachment: fixed;
+}
+
+/* Smooth Rounded Glassmorphic Pill & Card Containers */
+.pine-card {
+  background: rgba(22, 56, 50, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(35, 83, 71, 0.8);
+  box-shadow: 0 10px 30px -5px rgba(5, 31, 32, 0.7);
+}
+
+.pine-card-hover {
+  transition: all 0.25s ease;
+}
+.pine-card-hover:hover {
+  border-color: rgba(142, 182, 155, 0.7);
+  box-shadow: 0 12px 35px -5px rgba(35, 83, 71, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Primary Action Button using the palette */
+.pine-btn-primary {
+  background: #235347;
+  color: #DAF1DE;
+  border: 1px solid #8EB69B;
+  transition: all 0.25s ease;
+}
+.pine-btn-primary:hover {
+  background: #347c6a;
+  color: #FFFFFF;
+  box-shadow: 0 0 25px rgba(142, 182, 155, 0.45);
+}
+
+/* Secondary Button */
+.pine-btn-secondary {
+  background: rgba(11, 43, 38, 0.8);
+  color: #DAF1DE;
+  border: 1px solid rgba(35, 83, 71, 0.9);
+  transition: all 0.25s ease;
+}
+.pine-btn-secondary:hover {
+  background: #163832;
+  border-color: #8EB69B;
+  color: #FFFFFF;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #051F20;
+}
+::-webkit-scrollbar-thumb {
+  background: #235347;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8EB69B;
+}

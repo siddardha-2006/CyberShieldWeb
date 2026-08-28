@@ -1,0 +1,38 @@
+[
+  {
+    "id": "RULE_EMAIL_SPOOF_MISMATCH",
+    "title": "From / Reply-To Domain Discrepancy",
+    "description": "Reply-To address points to a different domain than sender, a hallmark of BEC and email spoofing.",
+    "weight": 45,
+    "severity": "critical",
+    "category": "impersonation",
+    "pattern_type": "property",
+    "field": "has_spoof_mismatch",
+    "operator": "equals",
+    "value": true
+  },
+  {
+    "id": "RULE_EMAIL_EXEC_IMPERSONATION",
+    "title": "Executive / Wire Transfer Language",
+    "description": "Email contains requests for direct wire transfer, gift cards, or confidential employee action.",
+    "weight": 35,
+    "severity": "high",
+    "category": "social_engineering",
+    "pattern_type": "regex",
+    "field": "body_snippet",
+    "pattern": "(?i)(wire transfer|gift card|payroll update|direct deposit|confidential task|are you at your desk)"
+  },
+  {
+    "id": "RULE_EMAIL_AUTH_FAIL",
+    "title": "Failed SPF / DKIM Authentication",
+    "description": "Email headers indicate sender failed cryptographic domain authentication checks.",
+    "weight": 40,
+    "severity": "high",
+    "category": "spoofing",
+    "pattern_type": "property",
+    "field": "spf_pass",
+    "operator": "equals",
+    "value": false
+  }
+]
+

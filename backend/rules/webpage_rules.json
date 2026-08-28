@@ -1,0 +1,39 @@
+[
+  {
+    "id": "RULE_WEB_PASSWORD_ON_HTTP",
+    "title": "Insecure Password Submission Form",
+    "description": "Webpage contains a password input field or credentials form without TLS encryption.",
+    "weight": 50,
+    "severity": "critical",
+    "category": "credential_theft",
+    "pattern_type": "property",
+    "field": "has_login_form",
+    "operator": "equals",
+    "value": true
+  },
+  {
+    "id": "RULE_WEB_OTP_HARVESTER",
+    "title": "Webpage OTP Input Harvester",
+    "description": "Page features dedicated verification code/OTP entry fields.",
+    "weight": 40,
+    "severity": "high",
+    "category": "credential_theft",
+    "pattern_type": "property",
+    "field": "has_otp_form",
+    "operator": "equals",
+    "value": true
+  },
+  {
+    "id": "RULE_WEB_PAYMENT_FORM",
+    "title": "Payment Card Data Collector",
+    "description": "Webpage collects credit card or CVV details on an unverified destination.",
+    "weight": 45,
+    "severity": "critical",
+    "category": "financial_fraud",
+    "pattern_type": "property",
+    "field": "has_payment_form",
+    "operator": "equals",
+    "value": true
+  }
+]
+

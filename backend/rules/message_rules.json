@@ -1,0 +1,51 @@
+[
+  {
+    "id": "RULE_MSG_OTP_REQUEST",
+    "title": "One-Time Password / PIN Solicitation",
+    "description": "Message prompts the recipient to share or enter an OTP or security PIN.",
+    "weight": 45,
+    "severity": "critical",
+    "category": "credential_theft",
+    "pattern_type": "property",
+    "field": "has_otp_request",
+    "operator": "equals",
+    "value": true
+  },
+  {
+    "id": "RULE_MSG_URGENCY_PRESSURE",
+    "title": "High Urgency Coercion",
+    "description": "Message uses panic or urgency words (immediately, suspended, blocked, 24h, expire).",
+    "weight": 30,
+    "severity": "high",
+    "category": "social_engineering",
+    "pattern_type": "property",
+    "field": "urgency_count",
+    "operator": "gte",
+    "value": 1
+  },
+  {
+    "id": "RULE_MSG_FINANCIAL_BAIT",
+    "title": "Financial / Banking Lure",
+    "description": "Message references bank accounts, credit cards, prizes, lotteries, or KYC verification.",
+    "weight": 30,
+    "severity": "high",
+    "category": "financial_fraud",
+    "pattern_type": "property",
+    "field": "financial_count",
+    "operator": "gte",
+    "value": 1
+  },
+  {
+    "id": "RULE_MSG_SMISHING_LINK",
+    "title": "Unsolicited Link in Urgent Context",
+    "description": "Message embeds an external link paired with urgency or account verification demands.",
+    "weight": 35,
+    "severity": "high",
+    "category": "phishing",
+    "pattern_type": "property",
+    "field": "has_link",
+    "operator": "equals",
+    "value": true
+  }
+]
+

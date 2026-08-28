@@ -1,0 +1,37 @@
+# ==============================================================================
+# CyberShield — Docker Ignore
+# ==============================================================================
+
+# Git & Docs
+.git
+.gitignore
+.github
+*.md
+docs/
+
+# Frontend builds & packages
+frontend/node_modules
+frontend/dist
+frontend/.vite
+npm-debug.log
+
+# Python cache & virtual environments
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+venv
+.venv
+env
+
+# Secrets & Environment
+.env
+.env.local
+
+# OS & IDE files
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+
