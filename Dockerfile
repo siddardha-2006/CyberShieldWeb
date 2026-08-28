@@ -32,10 +32,9 @@ COPY --from=frontend-builder /app/frontend/dist /app/frontend/dist
 # Set working directory to backend
 WORKDIR /app/backend
 
-# Default Port
+# Default Port (Render sets $PORT dynamically)
 ENV PORT=8000
 EXPOSE 8000
 
-# Start Uvicorn Server
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-
+# Start Uvicorn Server binding to Render's dynamic $PORT
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
